@@ -1,0 +1,151 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Coach {
+  id        Int       @id @default(autoincrement())
+  name      String
+  email     String    @unique
+  phone     String?
+  role      String    @default("Personal Trainer")
+  color     String    @default("#6B7280")
+  isEnabled Boolean   @default(true)
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  athletes  Athlete[] @relation("AthleteCoach")
+  sessions  TrainingSession[]
+
+}
+
+model Athlete {
+  id            Int       @id @default(autoincrement())
+  name          String
+  email         String    @unique
+  phone         String?
+  age           Int?
+  position      String?   @default("Atleta")
+  goal          String?
+  weight        String?
+  height        String?
+  city          String?
+  state         String?
+  country       String?   @default("Brasil")
+  isEnabled     Boolean   @default(true)
+  coachId       Int?
+  coach         Coach?    @relation("AthleteCoach", fields: [coachId], references: [id])
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+  sessions      TrainingSession[]
+  pains         PainRecord[]
+  injuries      InjuryRecord[]
+  wellbeingLogs WellbeingLog[]
+
+}
+
+model TrainingType {
+  id        Int       @id @default(autoincrement())
+  name      String    @unique
+  category  String    @default("Geral")
+  isEnabled Boolean   @default(true)
+  isDefault Boolean   @default(false)
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  sessions  TrainingSession[]
+
+}
+
+model TrainingSession {
+  id             Int            @id @default(autoincrement())
+  date           DateTime
+  startTime      String
+  endTime        String
+  athleteId      Int
+  athlete        Athlete        @relation(fields: [athleteId], references: [id], onDelete: Cascade)
+  coachId        Int
+  coach          Coach          @relation(fields: [coachId], references: [id])
+  trainingTypeId Int
+  trainingType   TrainingType   @relation(fields: [trainingTypeId], references: [id])
+  status         String         @default("Pendente")
+  location       String         @default("Academia")
+  psePlanned     Int            @default(4)
+  pseActual      Int?
+  psr            Int?
+  duration       Int?
+  summary        String?
+  completedAt    DateTime?
+  createdAt      DateTime       @default(now())
+  updatedAt      DateTime       @updatedAt
+  wellbeing      WellbeingLog?
+  pains          PainRecord[]
+  injuries       InjuryRecord[]
+
+  @@index([date])
+  @@index([coachId, date])
+  @@index([athleteId, date])
+}
+
+model WellbeingLog {
+  id           Int              @id @default(autoincrement())
+  sessionId    Int              @unique
+  session      TrainingSession  @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+  athleteId    Int
+  athlete      Athlete          @relation(fields: [athleteId], references: [id])
+  sleepQuality String?
+  sleepHours   String?
+  energy       String?
+  stress       String?
+  nutrition    String?
+  water        String?
+  pain         String?
+  fatigue      String?
+  mood         String?
+  motivation   String?
+  createdAt    DateTime         @default(now())
+
+}
+
+model PainRecord {
+  id        Int              @id @default(autoincrement())
+  sessionId Int?
+  session   TrainingSession? @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+  athleteId Int
+  athlete   Athlete          @relation(fields: [athleteId], references: [id])
+  area      String
+  intensity String?
+  side      String?
+  moment    String?
+  date      DateTime         @default(now())
+
+}
+
+model InjuryRecord {
+  id        Int              @id @default(autoincrement())
+  sessionId Int?
+  session   TrainingSession? @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+  athleteId Int
+  athlete   Athlete          @relation(fields: [athleteId], references: [id])
+  type      String
+  area      String?
+  side      String?
+  grade     String?
+  date      DateTime         @default(now())
+
+}
+
+model SavedReport {
+  id          Int      @id @default(autoincrement())
+  type        String   // "athlete" or "coach"
+  targetId    Int      // athlete or coach id
+  targetName  String
+  periodStart DateTime
+  periodEnd   DateTime
+  data        String   // JSON string of report data
+  createdAt   DateTime @default(now())
+
+  @@index([type, targetId])
+}

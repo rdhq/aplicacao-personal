@@ -1,0 +1,76 @@
+{
+  "coaches": [
+    { "id": 1, "name": "Admin Demo", "email": "admin@demo.com", "phone": "", "role": "Administrador", "color": "#f1ae1e", "isEnabled": true, "_count": { "athletes": 3 } },
+    { "id": 2, "name": "Personal Demo", "email": "personal@demo.com", "phone": "", "role": "Personal Trainer", "color": "#22C55E", "isEnabled": true, "_count": { "athletes": 2 } }
+  ],
+  "athletes": [
+    { "id": 1, "name": "Ana Silva", "email": "ana@demo.com", "phone": "", "age": 28, "position": "Atleta", "goal": "Performance", "weight": "62", "height": "170", "city": "São Paulo", "state": "SP", "country": "Brasil", "isEnabled": true, "coachId": 1, "coach": { "name": "Admin Demo" } },
+    { "id": 2, "name": "Bruno Costa", "email": "bruno@demo.com", "phone": "", "age": 32, "position": "Atleta", "goal": "Hipertrofia", "weight": "85", "height": "182", "city": "Rio de Janeiro", "state": "RJ", "country": "Brasil", "isEnabled": true, "coachId": 1, "coach": { "name": "Admin Demo" } },
+    { "id": 3, "name": "Carla Mendes", "email": "carla@demo.com", "phone": "", "age": 25, "position": "Atleta", "goal": "Emagrecimento", "weight": "58", "height": "165", "city": "Belo Horizonte", "state": "MG", "country": "Brasil", "isEnabled": true, "coachId": 2, "coach": { "name": "Personal Demo" } },
+    { "id": 4, "name": "Diego Ferreira", "email": "diego@demo.com", "phone": "", "age": 30, "position": "Atleta", "goal": "Condicionamento", "weight": "78", "height": "178", "city": "Florianópolis", "state": "SC", "country": "Brasil", "isEnabled": true, "coachId": 2, "coach": { "name": "Personal Demo" } },
+    { "id": 5, "name": "Elena Souza", "email": "elena@demo.com", "phone": "", "age": 27, "position": "Atleta", "goal": "Reabilitação", "weight": "60", "height": "168", "city": "Curitiba", "state": "PR", "country": "Brasil", "isEnabled": true, "coachId": 1, "coach": { "name": "Admin Demo" } }
+  ],
+  "trainingTypes": [
+    { "id": 1, "name": "Livre", "category": "Geral", "isEnabled": true, "isDefault": true },
+    { "id": 2, "name": "Força", "category": "Musculação", "isEnabled": true, "isDefault": false },
+    { "id": 3, "name": "Hipertrofia", "category": "Musculação", "isEnabled": true, "isDefault": false },
+    { "id": 4, "name": "Cardio", "category": "Aeróbico", "isEnabled": true, "isDefault": false },
+    { "id": 5, "name": "HIIT", "category": "Aeróbico", "isEnabled": true, "isDefault": false }
+  ],
+  "sessions": [],
+  "weekSchedules": [
+    { "id": 101, "day": "Seg", "time": "06:00", "endTime": "07:00", "athlete": "Ana Silva", "type": "Força", "coach": "Admin Demo", "status": "Confirmado", "location": "Academia", "pse": 5 },
+    { "id": 102, "day": "Seg", "time": "08:00", "endTime": "09:00", "athlete": "Bruno Costa", "type": "Hipertrofia", "coach": "Admin Demo", "status": "Confirmado", "location": "Academia", "pse": 6 },
+    { "id": 103, "day": "Seg", "time": "17:00", "endTime": "18:00", "athlete": "Carla Mendes", "type": "Cardio", "coach": "Personal Demo", "status": "Pendente", "location": "CT", "pse": 3 },
+    { "id": 104, "day": "Ter", "time": "07:00", "endTime": "08:00", "athlete": "Diego Ferreira", "type": "HIIT", "coach": "Personal Demo", "status": "Confirmado", "location": "Academia", "pse": 6 },
+    { "id": 105, "day": "Ter", "time": "09:00", "endTime": "10:00", "athlete": "Elena Souza", "type": "Livre", "coach": "Admin Demo", "status": "Pendente", "location": "Home", "pse": 2 },
+    { "id": 106, "day": "Ter", "time": "18:00", "endTime": "19:00", "athlete": "Ana Silva", "type": "Cardio", "coach": "Admin Demo", "status": "Confirmado", "location": "CT", "pse": 4 },
+    { "id": 107, "day": "Qua", "time": "06:00", "endTime": "07:00", "athlete": "Bruno Costa", "type": "Força", "coach": "Admin Demo", "status": "Confirmado", "location": "Academia", "pse": 5 },
+    { "id": 108, "day": "Qua", "time": "10:00", "endTime": "11:00", "athlete": "Carla Mendes", "type": "HIIT", "coach": "Personal Demo", "status": "Confirmado", "location": "Academia", "pse": 6 },
+    { "id": 109, "day": "Qua", "time": "19:00", "endTime": "20:00", "athlete": "Diego Ferreira", "type": "Livre", "coach": "Personal Demo", "status": "Pendente", "location": "Home", "pse": 2 },
+    { "id": 110, "day": "Qui", "time": "07:00", "endTime": "08:00", "athlete": "Elena Souza", "type": "Hipertrofia", "coach": "Admin Demo", "status": "Confirmado", "location": "Academia", "pse": 5 },
+    { "id": 111, "day": "Qui", "time": "12:00", "endTime": "13:00", "athlete": "Ana Silva", "type": "Livre", "coach": "Admin Demo", "status": "Confirmado", "location": "CT", "pse": 3 },
+    { "id": 112, "day": "Qui", "time": "17:30", "endTime": "18:30", "athlete": "Bruno Costa", "type": "Cardio", "coach": "Admin Demo", "status": "Pendente", "location": "Academia", "pse": 4 },
+    { "id": 113, "day": "Sex", "time": "06:30", "endTime": "07:30", "athlete": "Carla Mendes", "type": "Força", "coach": "Personal Demo", "status": "Confirmado", "location": "Academia", "pse": 5 },
+    { "id": 114, "day": "Sex", "time": "11:00", "endTime": "12:00", "athlete": "Diego Ferreira", "type": "HIIT", "coach": "Personal Demo", "status": "Confirmado", "location": "CT", "pse": 6 },
+    { "id": 115, "day": "Sex", "time": "18:00", "endTime": "19:00", "athlete": "Elena Souza", "type": "Livre", "coach": "Admin Demo", "status": "Pendente", "location": "Home", "pse": 2 },
+    { "id": 116, "day": "Sáb", "time": "08:00", "endTime": "09:00", "athlete": "Ana Silva", "type": "Cardio", "coach": "Admin Demo", "status": "Confirmado", "location": "CT", "pse": 4 },
+    { "id": 117, "day": "Sáb", "time": "10:00", "endTime": "11:00", "athlete": "Bruno Costa", "type": "Hipertrofia", "coach": "Admin Demo", "status": "Confirmado", "location": "Academia", "pse": 5 }
+  ],
+  "allSchedulesByWeek": {
+    "2026-04-06": [
+      { "id": 201, "day": "Seg", "time": "07:00", "endTime": "08:00", "athlete": "Ana Silva", "type": "Força", "coach": "Admin Demo", "status": "Confirmado", "location": "Academia", "pse": 5 },
+      { "id": 202, "day": "Ter", "time": "09:00", "endTime": "10:00", "athlete": "Bruno Costa", "type": "Hipertrofia", "coach": "Admin Demo", "status": "Confirmado", "location": "Academia", "pse": 6 },
+      { "id": 203, "day": "Qua", "time": "18:00", "endTime": "19:00", "athlete": "Carla Mendes", "type": "Cardio", "coach": "Personal Demo", "status": "Confirmado", "location": "CT", "pse": 4 },
+      { "id": 204, "day": "Qui", "time": "06:00", "endTime": "07:00", "athlete": "Diego Ferreira", "type": "HIIT", "coach": "Personal Demo", "status": "Confirmado", "location": "Academia", "pse": 6 },
+      { "id": 205, "day": "Sex", "time": "12:00", "endTime": "13:00", "athlete": "Elena Souza", "type": "Livre", "coach": "Admin Demo", "status": "Pendente", "location": "Home", "pse": 2 }
+    ],
+    "2026-04-13": [
+      { "id": 101, "day": "Seg", "time": "06:00", "endTime": "07:00", "athlete": "Ana Silva", "type": "Força", "coach": "Admin Demo", "status": "Confirmado", "location": "Academia", "pse": 5 },
+      { "id": 102, "day": "Seg", "time": "08:00", "endTime": "09:00", "athlete": "Bruno Costa", "type": "Hipertrofia", "coach": "Admin Demo", "status": "Confirmado", "location": "Academia", "pse": 6 },
+      { "id": 103, "day": "Seg", "time": "17:00", "endTime": "18:00", "athlete": "Carla Mendes", "type": "Cardio", "coach": "Personal Demo", "status": "Pendente", "location": "CT", "pse": 3 },
+      { "id": 104, "day": "Ter", "time": "07:00", "endTime": "08:00", "athlete": "Diego Ferreira", "type": "HIIT", "coach": "Personal Demo", "status": "Confirmado", "location": "Academia", "pse": 6 },
+      { "id": 105, "day": "Ter", "time": "09:00", "endTime": "10:00", "athlete": "Elena Souza", "type": "Livre", "coach": "Admin Demo", "status": "Pendente", "location": "Home", "pse": 2 },
+      { "id": 106, "day": "Ter", "time": "18:00", "endTime": "19:00", "athlete": "Ana Silva", "type": "Cardio", "coach": "Admin Demo", "status": "Confirmado", "location": "CT", "pse": 4 },
+      { "id": 107, "day": "Qua", "time": "06:00", "endTime": "07:00", "athlete": "Bruno Costa", "type": "Força", "coach": "Admin Demo", "status": "Confirmado", "location": "Academia", "pse": 5 },
+      { "id": 108, "day": "Qua", "time": "10:00", "endTime": "11:00", "athlete": "Carla Mendes", "type": "HIIT", "coach": "Personal Demo", "status": "Confirmado", "location": "Academia", "pse": 6 },
+      { "id": 109, "day": "Qua", "time": "19:00", "endTime": "20:00", "athlete": "Diego Ferreira", "type": "Livre", "coach": "Personal Demo", "status": "Pendente", "location": "Home", "pse": 2 },
+      { "id": 110, "day": "Qui", "time": "07:00", "endTime": "08:00", "athlete": "Elena Souza", "type": "Hipertrofia", "coach": "Admin Demo", "status": "Confirmado", "location": "Academia", "pse": 5 },
+      { "id": 111, "day": "Qui", "time": "12:00", "endTime": "13:00", "athlete": "Ana Silva", "type": "Livre", "coach": "Admin Demo", "status": "Confirmado", "location": "CT", "pse": 3 },
+      { "id": 112, "day": "Qui", "time": "17:30", "endTime": "18:30", "athlete": "Bruno Costa", "type": "Cardio", "coach": "Admin Demo", "status": "Pendente", "location": "Academia", "pse": 4 },
+      { "id": 113, "day": "Sex", "time": "06:30", "endTime": "07:30", "athlete": "Carla Mendes", "type": "Força", "coach": "Personal Demo", "status": "Confirmado", "location": "Academia", "pse": 5 },
+      { "id": 114, "day": "Sex", "time": "11:00", "endTime": "12:00", "athlete": "Diego Ferreira", "type": "HIIT", "coach": "Personal Demo", "status": "Confirmado", "location": "CT", "pse": 6 },
+      { "id": 115, "day": "Sex", "time": "18:00", "endTime": "19:00", "athlete": "Elena Souza", "type": "Livre", "coach": "Admin Demo", "status": "Pendente", "location": "Home", "pse": 2 },
+      { "id": 116, "day": "Sáb", "time": "08:00", "endTime": "09:00", "athlete": "Ana Silva", "type": "Cardio", "coach": "Admin Demo", "status": "Confirmado", "location": "CT", "pse": 4 },
+      { "id": 117, "day": "Sáb", "time": "10:00", "endTime": "11:00", "athlete": "Bruno Costa", "type": "Hipertrofia", "coach": "Admin Demo", "status": "Confirmado", "location": "Academia", "pse": 5 }
+    ],
+    "2026-04-20": [
+      { "id": 301, "day": "Seg", "time": "06:00", "endTime": "07:00", "athlete": "Diego Ferreira", "type": "Força", "coach": "Personal Demo", "status": "Confirmado", "location": "Academia", "pse": 5 },
+      { "id": 302, "day": "Ter", "time": "08:00", "endTime": "09:00", "athlete": "Elena Souza", "type": "Hipertrofia", "coach": "Admin Demo", "status": "Confirmado", "location": "Academia", "pse": 6 },
+      { "id": 303, "day": "Qua", "time": "10:00", "endTime": "11:00", "athlete": "Ana Silva", "type": "HIIT", "coach": "Admin Demo", "status": "Pendente", "location": "CT", "pse": 6 },
+      { "id": 304, "day": "Qui", "time": "17:00", "endTime": "18:00", "athlete": "Bruno Costa", "type": "Cardio", "coach": "Admin Demo", "status": "Confirmado", "location": "Academia", "pse": 4 },
+      { "id": 305, "day": "Sex", "time": "07:00", "endTime": "08:00", "athlete": "Carla Mendes", "type": "Livre", "coach": "Personal Demo", "status": "Pendente", "location": "Home", "pse": 3 },
+      { "id": 306, "day": "Sáb", "time": "09:00", "endTime": "10:00", "athlete": "Diego Ferreira", "type": "Força", "coach": "Personal Demo", "status": "Confirmado", "location": "CT", "pse": 5 }
+    ]
+  }
+}
